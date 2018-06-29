@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<istream>
+	<spark cronExpression="0 30 0 * * ?"
+                class="com.qiaofang.estatedata.spark.common.realtime.RealtimeDayMergeTask" master="yarn" lib ="common"
+                deployMode="cluster" driverMemory="1g" executorMemory="4g"
+                executorCores="4" jar="spark/common/com.qiaofang.estatedata.spark.common-1.0.jar" />
+</istream>
