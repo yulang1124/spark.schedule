@@ -33,6 +33,9 @@ public final class JdbcUtils {
         }
 
         synchronized (syncObject){
+            if(jdbcTemplateMap.containsKey(instanceName)){
+                return jdbcTemplateMap.get(instanceName);
+            }
             ComboPooledDataSource dataSource = new ComboPooledDataSource();
             try {
                 dataSource.setDriverClass(ConfigUtils.getProperty(instanceName + JDBC_DRIVER));
